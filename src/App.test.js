@@ -1,17 +1,17 @@
 // import { render, screen } from "@testing-library/react";
 import App from "./App";
-
-// setup file enzyme
-import { configure, shallow } from "enzyme";
-import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
-configure({ adapter: new Adapter() });
+//shallow hanya di component itu aja, mount semua child
+import { mount, shallow } from "enzyme";
+// import Counter from "./Counter";
 
 //describe untuk grouping
 describe("Counter App Testing", () => {
   let wrapper;
   beforeEach(() => {
-    //shallow from enzyme
-    wrapper = shallow(<App />);
+    //mount from enzyme
+
+    wrapper = mount(<App />);
+    // console.log(wrapper.debug());
   });
 
   test("should render title app", () => {
